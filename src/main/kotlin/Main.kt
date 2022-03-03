@@ -1,3 +1,4 @@
+import item2.prime
 import kotlin.concurrent.thread
 import kotlin.properties.Delegates
 
@@ -20,28 +21,28 @@ inline fun<T, R> Iterable<T>.map(
 }
 
 fun main() {
-    val userHolder = UserHolder()
-    // userHolderMap은 return을 mutableMap의 superclass(Map)로 받기때문에, 수정은 불가하다.
-    // 이런식으로 가변성을 제한 할 수도 있다.
-    val userHolderMap = userHolder.loadAll()
+//    val userHolder = UserHolder()
+//    // userHolderMap은 return을 mutableMap의 superclass(Map)로 받기때문에, 수정은 불가하다.
+//    // 이런식으로 가변성을 제한 할 수도 있다.
+//    val userHolderMap = userHolder.loadAll()
 
 
 
 
-    var list1 : List<Int> = listOf()
-    println(list1)
-    list1+=1
-    println(list1)
-    list1+=1
-    println(list1)
+//    var list1 : List<Int> = listOf()
+//    println(list1)
+//    list1+=1
+//    println(list1)
+//    list1+=1
+//    println(list1)
     // [1, 1]
 
-    val list2 : MutableList<Int> = mutableListOf()
-    println(list2)
-    list2.add(1)
-    println(list2)
-    list2.add(1)
-    println(list2)
+//    val list2 : MutableList<Int> = mutableListOf()
+//    println(list2)
+//    list2.add(1)
+//    println(list2)
+//    list2.add(1)
+//    println(list2)
     // [1, 1]
 
     //최악의 방식
@@ -90,6 +91,14 @@ fun main() {
 //    val numberPairs = listOf("one" to 1, "two" to 2)
 //    val unzipNumberPairs = numberPairs.unzip()
 //    println(unzipNumberPairs)
+
+    val p = prime()
+    p.eratosthenes()
+    println()
+    p.betterEratosthenes()
+
+
+
 }
 
 // 값이 자주 바뀌는 좋지 않은 코드
