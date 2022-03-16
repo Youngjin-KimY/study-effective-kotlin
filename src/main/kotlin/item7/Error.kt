@@ -34,24 +34,24 @@ class Failure(val throwable: Throwable) : Result<Nothing>()
 
 class JsonParsingException : Exception()
 
-inline fun <reified T> String.readObject(): T? {
-
-    //....
-    if(incorrectSign) {
-        return null
-    }
-
-    return result
-}
-
-inline fun <reified T> String.readObject(): Result<T> {
-    //..
-    var result : T?
-
-    if(incorrectSign) {
-        return Failure(JsonParsingException())
-    }
-    result = if(this.length > 10)  else null
-
-    return Success(result)
-}
+//inline fun <reified T> String.readObject(): T? {
+//
+//    //....
+//    if(incorrectSign) {
+//        return null
+//    }
+//
+//    return result
+//}
+//
+//inline fun <reified T> String.readObject(): Result<T> {
+//    //..
+//    var result : T?
+//
+//    if(incorrectSign) {
+//        return Failure(JsonParsingException())
+//    }
+//    result = if(this.length > 10)  else null
+//
+//    return Success(result)
+//}
